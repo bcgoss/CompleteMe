@@ -1,0 +1,4 @@
+.DS_Store
+/coverage
+:test
+test/.DS_Store

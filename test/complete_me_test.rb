@@ -3,7 +3,7 @@ SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 
-require './lib/completeme.rb'
+require_relative '../lib/complete_me.rb'
 
 class CompletemeTest < Minitest::Test
   def test_CompleteMe_exists

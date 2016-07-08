@@ -1,4 +1,4 @@
-require './lib/Node.rb'
+require_relative 'Node.rb'
 require 'pry'
 
 class CompleteMe
@@ -25,8 +25,9 @@ class CompleteMe
   end
 
   # def remove_word(node)
-  #   node.is_a_word = false
-  #   @word_count -= 1
+  #  node.is_a_word = false
+  #  @word_count -= 1
+  #  prune_tree
   # end
 
   def count
