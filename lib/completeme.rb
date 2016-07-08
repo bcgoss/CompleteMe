@@ -24,32 +24,14 @@ class CompleteMe
     node.is_a_word = true
   end
 
-  def remove_word(node)
-    node.is_a_word = false
-    @word_count -= 1
-    #prune_tree(node)
-  end
-
-  def prune_tree(node)
-    child_words = recursive_count(node)
-    if child_words == 0
-      node.children = {}
-    end
-  end
+  # def remove_word(node)
+  #   node.is_a_word = false
+  #   @word_count -= 1
+  # end
 
   def count
     @word_count
-    #total = recursive_count(@root)
   end
-
-  # def recursive_count(node)
-  #   total_words = 0
-  #   total_words += 1 if node.is_a_word
-  #   node.children.keys.each do |child_node|
-  #     total_words += recursive_count(child_node)
-  #   end
-  #   total_words
-  # end
 
   def suggest(substring)
     parent = go_to_substring(substring)
@@ -82,8 +64,6 @@ class CompleteMe
     substring.chars.each do |letter|
       if working_node.list_children.include?(letter)
         working_node = working_node.get_child(letter)
-      else
-        return false
       end
     end
     return working_node
